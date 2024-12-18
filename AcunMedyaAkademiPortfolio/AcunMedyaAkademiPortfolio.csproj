@@ -393,6 +393,7 @@
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Testimonial\Index.cshtml" />
     <Content Include="Views\Skill\SkillList.cshtml" />
+    <Content Include="Views\Skill\CreateSkill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

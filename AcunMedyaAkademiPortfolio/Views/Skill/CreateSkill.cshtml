@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CreateSkill";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Yeni Yetenek Girişi</h3>
+<form method="post">
+    <label>Yetenek Adı</label>
+    <input type="text" class="form-control" name="Title"/>
+
+    <label>Yetenek Değeri</label>
+    <input type="text" class="form-control" name="Value"/>
+
+    <label>Geçen Haftalık Değeri</label>
+    <input type="text" class="form-control" name="LastWeekValue"/>
+
+    <label>Geçen Aylık Değeri</label>
+    <input type="text" class="form-control" name="LastMonthValue"/>
+    <br /><br />
+    <button class="btn btn-info">Yeteneği Kaydet</button>
+</form>
+

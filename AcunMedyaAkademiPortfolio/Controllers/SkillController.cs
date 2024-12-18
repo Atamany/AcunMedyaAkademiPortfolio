@@ -15,5 +15,17 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             var values = db.TblSkill.ToList();
             return View(values);
         }
+        [HttpGet]
+        public ActionResult CreateSkill()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateSkill(TblSkill p)
+        {
+            db.TblSkill.Add(p);
+            db.SaveChanges();
+            return RedirectToAction("SkillList");
+        }
     }
 }
