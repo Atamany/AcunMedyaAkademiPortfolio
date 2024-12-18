@@ -419,6 +419,8 @@
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Service\CreateService.cshtml" />
     <Content Include="Views\Service\UpdateService.cshtml" />
+    <Content Include="Views\Testimonial\CreateTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
