@@ -1,0 +1,33 @@
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblAdress>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>Mail</th>
+        <th>Web Site</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AdressId</td>
+            <td>@item.Adress</td>
+            <td>@item.Phone</td>
+            <td>@item.Email</td>
+            <td>@item.Website</td>
+            <td><a href="/Adress/UpdateAdress/@item.AdressId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Adress/DeleteAdress/@item.AdressId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Adress/CreateAdress" class="btn btn-success">Yeni Adres Ekle</a>
+

@@ -1,8 +1,30 @@
-﻿
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblService>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>Servislerim</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Resim</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ServiceId</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.IconUrl</td>
+            <td><a href="/Service/UpdateService/@item.ServiceId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Service/DeleteService/@item.ServiceId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Service/CreateService" class="btn btn-success">Yeni Servis Ekle</a>
 

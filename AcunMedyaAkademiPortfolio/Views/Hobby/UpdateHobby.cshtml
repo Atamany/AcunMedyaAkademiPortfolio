@@ -1,0 +1,22 @@
+﻿@model AcunMedyaAkademiPortfolio.Models.TblHobby
+
+@{
+    ViewBag.Title = "UpdateHobby";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Hobi Güncelleme Sayfası</h3>
+<form method="post">
+    <label>Hobi ID</label>
+    <input type="text" class="form-control" name="HobbyId" value="@Model.HobbyId" />
+
+    <label>Hobi Resmi</label>
+    <input type="text" class="form-control" name="IconUrl" value="@Model.IconUrl" />
+
+    <label>Hobi Adı</label>
+    <input type="text" class="form-control" name="Title" value="@Model.Title" />
+
+    <br /><br />
+    <button class="btn btn-info">Hobi Güncelle</button>
+</form>
+

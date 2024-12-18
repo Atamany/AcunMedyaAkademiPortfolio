@@ -281,10 +281,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Contact\SendMessage.cshtml" />
-    <Content Include="Views\Contact\MessageList.cshtml" />
     <Content Include="Template\sidebar-07\.DS_Store" />
     <Content Include="Template\sidebar-07\css\.DS_Store" />
     <Content Include="Template\sidebar-07\css\bootstrap\.DS_Store" />
@@ -389,21 +385,43 @@
     <Content Include="Views\AdminLayout\SidebarPartial.cshtml" />
     <Content Include="Views\AdminLayout\NavbarPartial.cshtml" />
     <Content Include="Views\AdminLayout\ScriptPartial.cshtml" />
-    <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Testimonial\Index.cshtml" />
     <Content Include="Views\Skill\SkillList.cshtml" />
     <Content Include="Views\Skill\CreateSkill.cshtml" />
     <Content Include="Views\Skill\UpdateSkill.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\CreateAbout.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Adress\Index.cshtml" />
+    <Content Include="Views\Adress\CreateAdress.cshtml" />
+    <Content Include="Views\Adress\UpdateAdress.cshtml" />
+    <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="Views\Banner\CreateBanner.cshtml" />
+    <Content Include="Views\Banner\UpdateBanner.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\CreateCategory.cshtml" />
+    <Content Include="Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\CreateContact.cshtml" />
+    <Content Include="Views\Contact\UpdateContact.cshtml" />
+    <Content Include="Views\Feature\Index.cshtml" />
+    <Content Include="Views\Feature\CreateFeature.cshtml" />
+    <Content Include="Views\Feature\UpdateFeature.cshtml" />
+    <Content Include="Views\Hobby\Index.cshtml" />
+    <Content Include="Views\Hobby\CreateHobby.cshtml" />
+    <Content Include="Views\Hobby\UpdateHobby.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\CreateProfile.cshtml" />
+    <Content Include="Views\Profile\UpdateProfile.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\CreateProject.cshtml" />
+    <Content Include="Views\Project\UpdateProject.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\CreateService.cshtml" />
+    <Content Include="Views\Service\UpdateService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\About\" />
-    <Folder Include="Views\Adress\" />
-    <Folder Include="Views\Banner\" />
-    <Folder Include="Views\Feature\" />
-    <Folder Include="Views\Hobby\" />
-    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

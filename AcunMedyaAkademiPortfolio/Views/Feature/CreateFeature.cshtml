@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "CreateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Yeni Özellik Girişi</h3>
+<form method="post">
+    <label>Özellik Adı</label>
+    <input type="text" class="form-control" name="FeatureTitle" />
+
+    <label>Özellik Başlığı</label>
+    <input type="text" class="form-control" name="FeatureSubtitle" />
+
+    <label>Özellik Resmi</label>
+    <input type="text" class="form-control" name="FeatureImageUrl" />
+
+    <br /><br />
+    <button class="btn btn-info">Özellik Kaydet</button>
+</form>
+

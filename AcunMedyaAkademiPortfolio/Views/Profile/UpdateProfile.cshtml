@@ -1,0 +1,31 @@
+﻿@model AcunMedyaAkademiPortfolio.Models.TblProfile
+
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<h3>Profil Güncelleme Sayfası</h3>
+<form method="post">
+    <label>Profil ID</label>
+    <input type="text" class="form-control" name="ProfilId" value="@Model.ProfilId" />
+
+    <label>Ad</label>
+    <input type="text" class="form-control" name="Name" value="@Model.Name" />
+
+    <label>Doğum Tarihi</label>
+    <input type="text" class="form-control" name="Birthday" value="@Model.Birthday" />
+
+    <label>Adres</label>
+    <input type="text" class="form-control" name="Address" value="@Model.Address" />
+
+    <label>E-Posta</label>
+    <input type="text" class="form-control" name="Email" value="@Model.Email" />
+
+    <label>Telefon</label>
+    <input type="text" class="form-control" name="Telefone" value="@Model.Telefone" />
+
+    <br /><br />
+    <button class="btn btn-info">Profil Güncelle</button>
+</form>
+
+

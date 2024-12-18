@@ -1,0 +1,30 @@
+﻿@model AcunMedyaAkademiPortfolio.Models.TblBanner
+
+@{
+    ViewBag.Title = "UpdateBanner";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Banner Güncelleme Sayfası</h3>
+<form method="post">
+    <label>Banner ID</label>
+    <input type="text" class="form-control" name="BannerId" value="@Model.BannerId" />
+
+    <label>Başlık</label>
+    <input type="text" class="form-control" name="Title" value="@Model.Title" />
+
+    <label>Açıklama</label>
+    <input type="text" class="form-control" name="Description" value="@Model.Description" />
+
+    <label>Resim</label>
+    <input type="text" class="form-control" name="ImageUrl" value="@Model.ImageUrl" />
+
+    <br /><br />
+    <button class="btn btn-info">Banner Güncelle</button>
+</form>
+
+
+
+
+
+

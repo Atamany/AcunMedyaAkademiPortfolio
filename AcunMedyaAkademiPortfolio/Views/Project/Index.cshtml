@@ -1,29 +1,31 @@
-﻿
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblProject>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Proje Adı</th>
+        <th>Proje Resmi</th>
+        <th>Proje Kategorisi</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProjeId</td>
+            <td>@item.ProjectName</td>
+            <td>@item.ProjectImageUrl</td>
+            <td>@item.ProjectCategory</td>
+            <td><a href="/Project/UpdateProject/@item.ProjeId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Project/DeleteProject/@item.ProjeId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Project/CreateProject" class="btn btn-success">Yeni Proje Ekle</a>
 
-<h2>Projelerimiz</h2>
-<div class="container">
-    <table class="table-bordered">
-        <tr>
-            <th>Mesaj No</th>
-            <th>Gönderen</th>
-            <th>Konu</th>
-            <th>Mesajı Aç</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Abdul Samet Kayık</td>
-            <td>Tebrikler</td>
-            <td><a href="#" class="btn btn-warning">Mesajı Aç!</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Beyza Çoskun</td>
-            <td>Şikayet</td>
-            <td><a href="#" class="btn btn-warning">Mesajı Aç!</a></td>
-        </tr>
-    </table>
-</div>
+
+

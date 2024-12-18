@@ -1,0 +1,29 @@
+﻿@model AcunMedyaAkademiPortfolio.Models.TblContact
+
+@{
+    ViewBag.Title = "UpdateContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>İletişim Güncelleme Sayfası</h3>
+<form method="post">
+    <label>İletişim ID</label>
+    <input type="text" class="form-control" name="ContactId" value="@Model.ContactId" />
+
+    <label>Ad</label>
+    <input type="text" class="form-control" name="Name" value="@Model.Name" />
+
+    <label>E-Posta</label>
+    <input type="text" class="form-control" name="Email" value="@Model.Email" />
+
+    <label>Konu</label>
+    <input type="text" class="form-control" name="Subject" value="@Model.Subject" />
+
+    <label>Açıklama</label>
+    <input type="text" class="form-control" name="Description" value="@Model.Description" />
+
+    <br /><br />
+    <button class="btn btn-info">İletişim Güncelle</button>
+</form>
+
+
