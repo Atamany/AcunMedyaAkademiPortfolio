@@ -1,0 +1,29 @@
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblTestimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>İsim</th>
+        <th>Meslek</th>
+        <th>Açıklama</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.TestimonialId</td>
+                    <td>@item.TestimonialName</td>
+                    <td>@item.TestimonialTitle</td>
+                    <td>@item.TestimonialDescription</td>
+                    <td><a class="btn btn-warning">Güncelle</a></td>
+                    <td><a class="btn btn-danger">Sil</a></td>
+                </tr>
+            }
+</table>
+<td><a class="btn btn-success">Yeni Referans Ekle</a></td>
+
