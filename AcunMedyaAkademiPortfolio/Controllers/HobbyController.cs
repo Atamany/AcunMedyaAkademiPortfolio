@@ -36,10 +36,20 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
         public ActionResult UpdateHobby(int id)
         {
             var value = db.TblHobby.Find(id);
             return View(value);
+        }
+        [HttpPost]
+        public ActionResult UpdateHobby(TblHobby p)
+        {
+            var value = db.TblHobby.Find(p.HobbyId);
+            value.IconUrl = p.IconUrl;
+            value.Title = p.Title;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

@@ -36,10 +36,21 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
         public ActionResult UpdateBanner(int id)
         {
             var value = db.TblBanner.Find(id);
             return View(value);
+        }
+        [HttpPost]
+        public ActionResult UpdateBanner(TblBanner p)
+        {
+            var value = db.TblBanner.Find(p.BannerId);
+            value.Title = p.Title;
+            value.Description = p.Description;
+            value.ImageUrl = p.ImageUrl;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
