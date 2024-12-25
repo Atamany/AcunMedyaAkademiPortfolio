@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="124b6702cccd43b0ab69d3010cdce044" Name="Diagram1">
+      <Diagram DiagramId="2ceb03b299f54283ba75a82d8671d037" Name="Diagram1">
         <EntityTypeShape EntityType="DbPortfolioModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbPortfolioModel.TblAbout" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbPortfolioModel.TblAdress" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
@@ -18,7 +18,7 @@
         <EntityTypeShape EntityType="DbPortfolioModel.TblService" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbPortfolioModel.TblSkill" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbPortfolioModel.TblTestimonial" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <AssociationConnector Association="DbPortfolioModel.FK_TblProject_TblCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DbPortfolioModel.FK_TblProject_TblCategory1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -23,6 +23,7 @@ namespace AcunMedyaAkademiPortfolio.Controllers
         [HttpPost]
         public ActionResult CreateTestimonial(TblTestimonial p)
         {
+            p.Status = true;
             db.TblTestimonial.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -49,7 +50,7 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             value.TestimonialTitle = p.TestimonialTitle;
             value.TestimonialDescription = p.TestimonialDescription;
             value.TestimonialImageUrl = p.TestimonialImageUrl;
-            value.Status = p.Status;
+            value.Status = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

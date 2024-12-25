@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -127,7 +127,7 @@
           <Property Name="TestimonialImageUrl" Type="varchar" MaxLength="150" />
           <Property Name="Status" Type="bit" />
         </EntityType>
-        <Association Name="FK_TblProject_TblCategory">
+        <Association Name="FK_TblProject_TblCategory1">
           <End Role="TblCategory" Type="Self.TblCategory" Multiplicity="0..1" />
           <End Role="TblProject" Type="Self.TblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -139,6 +139,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetLastSkillTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DbPortfolioModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
@@ -153,13 +154,12 @@
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_TblProject_TblCategory" Association="Self.FK_TblProject_TblCategory">
+          <AssociationSet Name="FK_TblProject_TblCategory1" Association="Self.FK_TblProject_TblCategory1">
             <End Role="TblCategory" EntitySet="TblCategory" />
             <End Role="TblProject" EntitySet="TblProject" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbPortfolioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -207,7 +207,7 @@
           </Key>
           <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TblProject" Relationship="Self.FK_TblProject_TblCategory" FromRole="TblCategory" ToRole="TblProject" />
+          <NavigationProperty Name="TblProject" Relationship="Self.FK_TblProject_TblCategory1" FromRole="TblCategory" ToRole="TblProject" />
         </EntityType>
         <EntityType Name="TblContact">
           <Key>
@@ -255,7 +255,7 @@
           <Property Name="ProjectName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="ProjectImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="ProjectCategory" Type="Int32" />
-          <NavigationProperty Name="TblCategory" Relationship="Self.FK_TblProject_TblCategory" FromRole="TblProject" ToRole="TblCategory" />
+          <NavigationProperty Name="TblCategory" Relationship="Self.FK_TblProject_TblCategory1" FromRole="TblProject" ToRole="TblCategory" />
         </EntityType>
         <EntityType Name="TblService">
           <Key>
@@ -287,7 +287,7 @@
           <Property Name="TestimonialImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="Boolean" />
         </EntityType>
-        <Association Name="FK_TblProject_TblCategory">
+        <Association Name="FK_TblProject_TblCategory1">
           <End Role="TblCategory" Type="Self.TblCategory" Multiplicity="0..1" />
           <End Role="TblProject" Type="Self.TblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -313,10 +313,11 @@
           <EntitySet Name="TblService" EntityType="Self.TblService" />
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" />
           <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" />
-          <AssociationSet Name="FK_TblProject_TblCategory" Association="Self.FK_TblProject_TblCategory">
+          <AssociationSet Name="FK_TblProject_TblCategory1" Association="Self.FK_TblProject_TblCategory1">
             <End Role="TblCategory" EntitySet="TblCategory" />
             <End Role="TblProject" EntitySet="TblProject" />
           </AssociationSet>
+          <FunctionImport Name="GetLastSkillTitle" ReturnType="Collection(String)" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -459,6 +460,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetLastSkillTitle" FunctionName="DbPortfolioModel.Store.GetLastSkillTitle" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
