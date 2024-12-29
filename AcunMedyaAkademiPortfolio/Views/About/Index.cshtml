@@ -8,8 +8,8 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
-        <th>Açıklama</th>
         <th>Başlık</th>
+        <th>Açıklama</th>
         <th>Güncelle</th>
         <th>Sil</th>
     </tr>
@@ -17,8 +17,8 @@
     {
         <tr>
             <td>@item.AboutId</td>
-            <td>@item.Description</td>
             <td>@item.Title</td>
+            <td>@item.Description</td>
             <td><a href="/About/UpdateAbout/@item.AboutId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/About/DeleteAbout/@item.AboutId" class="btn btn-danger">Sil</a></td>
         </tr>
