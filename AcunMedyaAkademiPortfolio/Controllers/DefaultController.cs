@@ -19,6 +19,10 @@ namespace AcunMedyaAkademiPortfolio.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult PartialScripts()
+        {
+            return PartialView();
+        }
         public PartialViewResult PartialNavbar()
         {
             return PartialView();
@@ -48,10 +52,21 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             var values = db.TblHobby.ToList();
             return PartialView(values);
         }
+        public PartialViewResult PartialService()
+        {
+            var values = db.TblService.ToList();
+            return PartialView(values);
+        }
         public PartialViewResult PartialStatistic()
         {
             var skillcount = db.TblSkill.ToList().Count();
+            var testimonialcount = db.TblTestimonial.ToList().Count();
+            var projectcount = db.TblProject.ToList().Count();
+            var servicecount = db.TblService.ToList().Count();
             ViewBag.SkillCount = skillcount;
+            ViewBag.TestimonialCount = testimonialcount;
+            ViewBag.ProjectCount = projectcount;
+            ViewBag.ServiceCount = servicecount;
             return PartialView();
         }
     }
