@@ -1,0 +1,12 @@
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblHobby>
+
+<div class="my-interest d-lg-flex w-100">
+    @foreach (var item in Model) { 
+    <div class="interest-wrap d-flex align-items-center">
+        <div class="icon d-flex align-items-center justify-content-center">
+            <span><img src="@item.IconUrl" style="width:25px;height:25px;" /></span>
+        </div>
+        <div class="text">@item.Title</div>
+    </div>
+    }
+</div>

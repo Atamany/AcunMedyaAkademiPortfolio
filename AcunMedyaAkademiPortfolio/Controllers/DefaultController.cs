@@ -33,10 +33,26 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             var values = db.TblAbout.ToList();
             return PartialView(values);
         }
+        public PartialViewResult PartialProfile()
+        {
+            var values = db.TblProfile.ToList();
+            return PartialView(values);
+        }
         public PartialViewResult PartialSkill()
         {
             var values = db.TblSkill.ToList();
             return PartialView(values);
+        }
+        public PartialViewResult PartialHobby()
+        {
+            var values = db.TblHobby.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialStatistic()
+        {
+            var skillcount = db.TblSkill.ToList().Count();
+            ViewBag.SkillCount = skillcount;
+            return PartialView();
         }
     }
 }
