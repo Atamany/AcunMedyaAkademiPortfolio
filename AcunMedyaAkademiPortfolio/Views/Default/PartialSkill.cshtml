@@ -1,0 +1,46 @@
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblSkill>
+<section class="ftco-section bg-light" id="skills-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <span class="subheading">Skills</span>
+                <h2 class="mb-4">Yeteneklerim</h2>
+                <p></p>
+            </div>
+        </div>
+        <div class="row progress-circle mb-5">
+            @foreach (var item in Model)
+            {
+            <div class="col-lg-4 mb-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h2 class="h5 font-weight-bold text-center mb-4">@item.Title</h2>
+
+                    <!-- Progress bar 1 -->
+                    <div class="progress mx-auto" data-value='@item.Value'>
+                        <span class="progress-left">
+                            <span class="progress-bar border-primary"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar border-primary"></span>
+                        </span>
+                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                            <div class="h2 font-weight-bold">@item.Value<sup class="small">%</sup></div>
+                        </div>
+                    </div>
+                    <!-- END -->
+                    <!-- Demo info -->
+                    <div class="row text-center mt-4">
+                        <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0">@item.LastWeekValue%</div><span class="small text-gray">Last week</span>
+                        </div>
+                        <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0">@item.LastMonthValue%</div><span class="small text-gray">Last month</span>
+                        </div>
+                    </div>
+                    <!-- END -->
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

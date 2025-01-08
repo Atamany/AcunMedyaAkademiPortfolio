@@ -592,6 +592,7 @@
     <Content Include="Views\Default\PartialNavbar.cshtml" />
     <Content Include="Views\Default\PartialFeature.cshtml" />
     <Content Include="Views\Default\PartialAbout.cshtml" />
+    <Content Include="Views\Default\PartialSkill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
