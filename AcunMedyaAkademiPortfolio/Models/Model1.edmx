@@ -20,7 +20,7 @@
             <PropertyRef Name="AboutId" />
           </Key>
           <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="150" />
+          <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Title" Type="varchar" MaxLength="30" />
           <Property Name="ImageUrl" Type="varchar" MaxLength="150" />
         </EntityType>
@@ -116,6 +116,15 @@
           <Property Name="LastWeekValue" Type="tinyint" />
           <Property Name="LastMonthValue" Type="tinyint" />
         </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="SosyalMedyaId" />
+          </Key>
+          <Property Name="SosyalMedyaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Platform" Type="varchar" MaxLength="50" />
+          <Property Name="Link" Type="varchar(max)" />
+          <Property Name="İkonUrl" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="TblTestimonial">
           <Key>
             <PropertyRef Name="TestimonialId" />
@@ -153,6 +162,7 @@
           <EntitySet Name="TblProject" EntityType="Self.TblProject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkill" EntityType="Self.TblSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTestimonial" EntityType="Self.TblTestimonial" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TblProject_TblCategory1" Association="Self.FK_TblProject_TblCategory1">
             <End Role="TblCategory" EntitySet="TblCategory" />
@@ -178,7 +188,7 @@
             <PropertyRef Name="AboutId" />
           </Key>
           <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -318,7 +328,17 @@
             <End Role="TblProject" EntitySet="TblProject" />
           </AssociationSet>
           <FunctionImport Name="GetLastSkillTitle" ReturnType="Collection(String)" />
+          <EntitySet Name="TblSocialMedia" EntityType="DbPortfolioModel.TblSocialMedia" />
         </EntityContainer>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="SosyalMedyaId" />
+          </Key>
+          <Property Name="SosyalMedyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Platform" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="İkonUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -461,6 +481,16 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GetLastSkillTitle" FunctionName="DbPortfolioModel.Store.GetLastSkillTitle" />
+          <EntitySetMapping Name="TblSocialMedia">
+            <EntityTypeMapping TypeName="DbPortfolioModel.TblSocialMedia">
+              <MappingFragment StoreEntitySet="TblSocialMedia">
+                <ScalarProperty Name="İkonUrl" ColumnName="İkonUrl" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Platform" ColumnName="Platform" />
+                <ScalarProperty Name="SosyalMedyaId" ColumnName="SosyalMedyaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

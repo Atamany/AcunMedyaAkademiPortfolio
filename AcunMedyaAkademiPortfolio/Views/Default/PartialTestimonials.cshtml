@@ -1,0 +1,36 @@
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblTestimonial> 
+<section class="ftco-section testimony-section bg-primary">
+<div class="container">
+    <div class="row justify-content-center pb-5">
+        <div class="col-md-12 heading-section heading-section-white text-center ftco-animate">
+            <span class="subheading">Referanslar</span>
+            <h2 class="mb-4">Atamany hakkında yapılan yorumlar...</h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="row ftco-animate">
+        <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+                @foreach (var item in Model)
+                {
+                <div class="item">
+                    <div class="testimony-wrap py-4">
+                        <div class="text">
+                            <span class="fa fa-quote-left"></span>
+                            <p class="mb-4 pl-5">@item.TestimonialDescription</p>
+                            <div class="d-flex align-items-center">
+                                <div class="user-img" style="background-image: url(@item.TestimonialImageUrl)"></div>
+                                <div class="pl-3">
+                                    <p class="name">@item.TestimonialName</p>
+                                    <span class="position">@item.TestimonialTitle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+</section>

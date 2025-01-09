@@ -1,0 +1,88 @@
+﻿@model List<AcunMedyaAkademiPortfolio.Models.TblProfile> 
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+<div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+            <span class="subheading">İletişime Geç!</span>
+            <h2 class="mb-4">Bir projeniz mi var?</h2>
+            <p>Bana aşağıdaki form aracılığıyla hızlıca ulaşabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="row block-9">
+        <div class="col-md-8">
+            <form action="#" class="bg-light p-4 p-md-5 contact-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ad - Soyad">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="E-Posta">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Konu">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Mesaj"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="submit" value="Gönder" class="btn btn-primary py-3 px-5">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="col-md-4 d-flex pl-md-5">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                <div class="dbox w-100 d-flex">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-map-marker"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>Adres:</span> @item.Address</p>
+                    </div>
+                </div>
+                <div class="dbox w-100 d-flex">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-phone"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>Telefon:</span> <a href="tel://@item.Telefone">@item.Telefone</a></p>
+                    </div>
+                </div>
+                <div class="dbox w-100 d-flex">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-paper-plane"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>E-Posta:</span> <a href="mailto:@item.Email">@item.Email</a></p>
+                    </div>
+                </div>
+                <div class="dbox w-100 d-flex">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-globe"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>Website</span> <a href="http://atamany.somee.com/Default/Index/">Atamany</a></p>
+                    </div>
+                </div>
+                }
+            </div>
+            <!-- <div id="map" class="map"></div> -->
+        </div>
+    </div>
+</div>
+</section>

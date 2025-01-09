@@ -138,6 +138,7 @@
     <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HobbyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialViewModel.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
@@ -196,6 +197,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TblSkill.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblSocialMedia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TblTestimonial.cs">
@@ -274,29 +278,7 @@
     <Content Include="Template\ClydeMaster\images\Atamany3.jpg" />
     <Content Include="Template\ClydeMaster\images\Atamany2.jpg" />
     <Content Include="Template\ClydeMaster\images\Atamany1.jpg" />
-    <Content Include="Template\ClydeMaster\images\about-1.jpg" />
-    <Content Include="Template\ClydeMaster\images\about.jpg" />
-    <Content Include="Template\ClydeMaster\images\author.png" />
-    <Content Include="Template\ClydeMaster\images\bg_1.jpg" />
-    <Content Include="Template\ClydeMaster\images\bg_2.jpg" />
-    <Content Include="Template\ClydeMaster\images\bg_3.jpg" />
-    <Content Include="Template\ClydeMaster\images\bg_4.jpg" />
-    <Content Include="Template\ClydeMaster\images\image_1.jpg" />
-    <Content Include="Template\ClydeMaster\images\image_2.jpg" />
-    <Content Include="Template\ClydeMaster\images\image_3.jpg" />
     <Content Include="Template\ClydeMaster\images\loc.png" />
-    <Content Include="Template\ClydeMaster\images\person_1.jpg" />
-    <Content Include="Template\ClydeMaster\images\person_2.jpg" />
-    <Content Include="Template\ClydeMaster\images\person_3.jpg" />
-    <Content Include="Template\ClydeMaster\images\person_4.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-1.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-2.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-3.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-4.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-5.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-6.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-7.jpg" />
-    <Content Include="Template\ClydeMaster\images\work-8.jpg" />
     <Content Include="Template\ClydeMaster\index.html" />
     <Content Include="Template\ClydeMaster\js\aos.js" />
     <Content Include="Template\ClydeMaster\js\bootstrap.min.js" />
@@ -598,9 +580,14 @@
     <Content Include="Views\Default\PartialHobby.cshtml" />
     <Content Include="Views\Default\PartialScripts.cshtml" />
     <Content Include="Views\Default\PartialService.cshtml" />
+    <Content Include="Views\Default\PartialProjects.cshtml" />
+    <Content Include="Views\Default\PartialTestimonials.cshtml" />
+    <Content Include="Views\Default\PartialContact.cshtml" />
+    <Content Include="Views\Default\PartialFooter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PartialViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

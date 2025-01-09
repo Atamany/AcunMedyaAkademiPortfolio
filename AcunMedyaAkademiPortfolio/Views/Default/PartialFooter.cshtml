@@ -1,0 +1,68 @@
+﻿@model AcunMedyaAkademiPortfolio.Controllers.PartialViewModel
+
+<footer class="ftco-footer ftco-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Lets talk about</h2>
+                    <p><script>document.write(new Date().getFullYear());</script> | Bütün Hakları Saklıdır. | Made by <a href="http://github.com/Atamany">Yiğit Ataman</a></p>
+                    <p><a href="#" class="btn btn-primary">Daha Fazlası...</a></p>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">Linkler</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#AnaSayfa"><span class="fa fa-chevron-right mr-2"></span>Ana Sayfa</a></li>
+                        <li><a href="#Hakkinda"><span class="fa fa-chevron-right mr-2"></span>Hakkında</a></li>
+                        <li><a href="#Hizmetlerim"><span class="fa fa-chevron-right mr-2"></span>Hizmetlerim</a></li>
+                        <li><a href="#Projelerim"><span class="fa fa-chevron-right mr-2"></span>Projelerim</a></li>
+                        <li><a href="#Iletisim"><span class="fa fa-chevron-right mr-2"></span>İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Hizmetlerim</h2>
+                    @foreach (var item in Model.Table1Data)
+                    {
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>@item.Title</a></li>
+                        </ul>
+                    }
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Sorularınız için:</h2>
+                    <div class="block-23 mb-3">
+                        @foreach (var item2 in Model.Table2Data) { 
+                            <ul>
+                                <li><span class="icon fa fa-map marker"></span><span class="text">@item2.Address</span></li>
+                                <li><span class="icon fa fa-phone"></span><span class="text">@item2.Telefone</span></li>
+                                <li><a href="mailto:@item2.Email"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">@item2.Email</span></a></li>
+                            </ul>
+                            }
+                        </div>
+                        <ul class="ftco-footer-social list-unstyled mt-2">
+                            @foreach(var item3 in Model.Table3Data) { 
+                            <li class="ftco-animate"><a href="@item3.Link"><span> <img src="@item3.İkonUrl" style="width:25px;height:25px" /></span></a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>

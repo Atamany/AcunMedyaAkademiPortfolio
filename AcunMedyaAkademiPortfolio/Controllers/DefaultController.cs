@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AcunMedyaAkademiPortfolio.Models;
 
 namespace AcunMedyaAkademiPortfolio.Controllers
 {
@@ -22,6 +21,20 @@ namespace AcunMedyaAkademiPortfolio.Controllers
         public PartialViewResult PartialScripts()
         {
             return PartialView();
+        }
+        public PartialViewResult PartialFooter()
+        {
+            using (var context = new DbPortfolioEntities())
+            {
+                var model = new PartialViewModel
+                {
+                    Table1Data = context.TblService.ToList(),
+                    Table2Data = context.TblProfile.ToList(),
+                    Table3Data = context.TblSocialMedia.ToList()
+                };
+
+                return PartialView("PartialFooter", model);
+            }
         }
         public PartialViewResult PartialNavbar()
         {
@@ -50,6 +63,21 @@ namespace AcunMedyaAkademiPortfolio.Controllers
         public PartialViewResult PartialHobby()
         {
             var values = db.TblHobby.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialProjects()
+        {
+            var values = db.TblProject.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialTestimonials()
+        {
+            var values = db.TblTestimonial.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialContact()
+        {
+            var values = db.TblProfile.ToList();
             return PartialView(values);
         }
         public PartialViewResult PartialService()
