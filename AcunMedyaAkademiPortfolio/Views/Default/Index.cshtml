@@ -6,10 +6,13 @@
 <!DOCTYPE html>
 <html lang="en">
 @Html.Action("PartialHead", "Default")
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
     @Html.Action("PartialNavbar", "Default")
+
     @Html.Action("PartialFeature", "Default")
+
     @Html.Action("PartialStatistic", "Default")
 
 
@@ -28,6 +31,7 @@
                         <div class="row justify-content-start pb-3">
                             <div class="col-md-12 heading-section ftco-animate">
                                 @Html.Action("PartialAbout", "Default")
+
                                 @Html.Action("PartialProfile", "Default")
 
                             </div>
@@ -39,6 +43,7 @@
         </div>
     </section>
     @Html.Action("PartialSkill", "Default")
+
     @Html.Action("PartialService", "Default")
 
 
@@ -58,9 +63,16 @@
     </section>
 
     @Html.Action("PartialProjects", "Default")
-    @Html.Action("PartialTestimonials", "Default")
+
+    <section id="testimonial-section">
+        @Html.Action("PartialTestimonials", "Default")
+    </section>
+
     @Html.Action("PartialContact", "Default")
+
     @Html.Action("PartialFooter", "Default")
+
     @Html.Action("PartialScripts", "Default")
+
 </body>
 </html>
