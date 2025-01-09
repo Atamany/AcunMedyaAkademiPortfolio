@@ -24,6 +24,14 @@
           <Property Name="Title" Type="varchar" MaxLength="30" />
           <Property Name="ImageUrl" Type="varchar" MaxLength="150" />
         </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nchar" MaxLength="20" />
+          <Property Name="Password" Type="nchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="TblAdress">
           <Key>
             <PropertyRef Name="AdressId" />
@@ -31,7 +39,7 @@
           <Property Name="AdressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Adress" Type="varchar" MaxLength="50" />
           <Property Name="Phone" Type="varchar" MaxLength="20" />
-          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="Website" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TblBanner">
@@ -131,7 +139,7 @@
           </Key>
           <Property Name="TestimonialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TestimonialName" Type="varchar" MaxLength="30" />
-          <Property Name="TestimonialTitle" Type="varchar" MaxLength="30" />
+          <Property Name="TestimonialTitle" Type="varchar" MaxLength="100" />
           <Property Name="TestimonialDescription" Type="varchar" MaxLength="100" />
           <Property Name="TestimonialImageUrl" Type="varchar" MaxLength="150" />
           <Property Name="Status" Type="bit" />
@@ -152,6 +160,7 @@
         <EntityContainer Name="DbPortfolioModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAdress" EntityType="Self.TblAdress" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblBanner" EntityType="Self.TblBanner" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCategory" EntityType="Self.TblCategory" Schema="dbo" store:Type="Tables" />
@@ -199,7 +208,7 @@
           <Property Name="AdressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TblBanner">
@@ -292,7 +301,7 @@
           </Key>
           <Property Name="TestimonialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TestimonialName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="TestimonialTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TestimonialTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="TestimonialDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="TestimonialImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="Boolean" />
@@ -329,6 +338,7 @@
           </AssociationSet>
           <FunctionImport Name="GetLastSkillTitle" ReturnType="Collection(String)" />
           <EntitySet Name="TblSocialMedia" EntityType="DbPortfolioModel.TblSocialMedia" />
+          <EntitySet Name="TblAdmin" EntityType="DbPortfolioModel.TblAdmin" />
         </EntityContainer>
         <EntityType Name="TblSocialMedia">
           <Key>
@@ -338,6 +348,14 @@
           <Property Name="Platform" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="İkonUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -488,6 +506,15 @@
                 <ScalarProperty Name="Link" ColumnName="Link" />
                 <ScalarProperty Name="Platform" ColumnName="Platform" />
                 <ScalarProperty Name="SosyalMedyaId" ColumnName="SosyalMedyaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbPortfolioModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

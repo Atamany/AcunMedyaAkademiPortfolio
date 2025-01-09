@@ -41,6 +41,7 @@ namespace AcunMedyaAkademiPortfolio.Models
         public virtual DbSet<TblSkill> TblSkill { get; set; }
         public virtual DbSet<TblTestimonial> TblTestimonial { get; set; }
         public virtual DbSet<TblSocialMedia> TblSocialMedia { get; set; }
+        public virtual DbSet<TblAdmin> TblAdmin { get; set; }
     
         public virtual ObjectResult<string> GetLastSkillTitle()
         {

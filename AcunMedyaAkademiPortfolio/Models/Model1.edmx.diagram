@@ -20,6 +20,7 @@
         <EntityTypeShape EntityType="DbPortfolioModel.TblTestimonial" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="DbPortfolioModel.FK_TblProject_TblCategory1" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DbPortfolioModel.TblSocialMedia" Width="1.5" PointX="9" PointY="6.75" />
+        <EntityTypeShape EntityType="DbPortfolioModel.TblAdmin" Width="1.5" PointX="9.875" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
