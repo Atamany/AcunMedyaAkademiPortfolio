@@ -68,7 +68,24 @@
         @Html.Action("PartialTestimonials", "Default")
     </section>
 
-    @Html.Action("PartialContact", "Default")
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading">İletişime Geç!</span>
+                    <h2 class="mb-4">Bir projeniz mi var?</h2>
+                    <p>Bana aşağıdaki form aracılığıyla hızlıca ulaşabilirsiniz.</p>
+                </div>
+            </div>
+
+            <div class="row block-9">
+                @Html.Action("PartialContact", "Default")
+                @Html.Action("PartialAddress", "Default")
+                
+            </div>
+        </div>
+    </section>
+
 
     @Html.Action("PartialFooter", "Default")
 

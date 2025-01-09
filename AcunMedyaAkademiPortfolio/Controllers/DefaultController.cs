@@ -75,9 +75,27 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             var values = db.TblTestimonial.ToList();
             return PartialView(values);
         }
+        [HttpGet]
         public PartialViewResult PartialContact()
         {
-            var values = db.TblProfile.ToList();
+
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult PartialContact(TblContact y)
+        {
+            if (ModelState.IsValid)
+            {
+                db.TblContact.Add(y);
+                db.SaveChanges();
+
+                ViewBag.RedirectUrl = Url.Action("Index", "Default");
+            }
+            return PartialView();
+        }
+        public PartialViewResult PartialAddress()
+        {
+            var values = db.TblAdress.ToList();
             return PartialView(values);
         }
         public PartialViewResult PartialService()
